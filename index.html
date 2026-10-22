@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio Firaol, Full Stack Developer.">
+  <title>Firaol | Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="logo" href="#home">Firaol<span>.</span></a>
+
+      <button class="menu-toggle" id="menu-toggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false" aria-controls="nav-links">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+        <h1>Hi, I'm <span>Firaol</span></h1>
+        <h2>Full Stack Developer</h2>
+        <p class="hero-description">
+          I build responsive websites and web applications
+          that solve real-world problems.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#projects">View My Projects</a>
+          <a class="btn secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+          <p>
+            Hello! I'm Firaol, a developer interested in building
+            useful and user-friendly web applications. I enjoy
+            learning new technologies, solving problems, and
+            turning ideas into working projects.
+          </p>
+          <p>
+            My goal is to develop accessible, responsive, and
+            reliable digital experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="skills">
+      <div class="container">
+        <p class="eyebrow">WHAT I WORK WITH</p>
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">HTML5</div>
+          <div class="skill-card">CSS3</div>
+          <div class="skill-card">JavaScript</div>
+          <div class="skill-card">Responsive Design</div>
+          <div class="skill-card">Git & GitHub</div>
+          <div class="skill-card">Web Development</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="eyebrow">WHAT I'VE BUILT</p>
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">🎓</div>
+            <h3>Student Management System</h3>
+            <p>
+              A student management project designed to organize
+              student information and make records easier to manage.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <a class="project-link" href="#contact">
+              Ask about this project →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">💻</div>
+            <h3>Personal Portfolio</h3>
+            <p>
+              A responsive personal website to introduce myself,
+              showcase my skills, and share my work.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <a class="project-link" href="#contact">
+              Get in touch →
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-icon" aria-hidden="true">🚀</div>
+            <h3>Future Project</h3>
+            <p>
+              I am continuing to learn and build new applications.
+              More projects will be added here as they are completed.
+            </p>
+            <div class="tags">
+              <span>Learning</span>
+              <span>Development</span>
+            </div>
+            <a class="project-link" href="#contact">
+              Contact me →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="contact">
+      <div class="container">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="contact-intro">
+          Have a question or project idea? Send me a message.
+        </p>
+
+        <form class="contact-form"
+          action="https://formspree.io/f/xgaawrna"
+          method="POST">
+
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text"
+            placeholder="Enter your name" required>
+
+          <label for="email">Your Email</label>
+          <input id="email" name="email" type="email"
+            placeholder="Enter your email" required>
+
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5"
+            placeholder="Write your message..." required></textarea>
+
+          <button class="btn primary" type="submit">Send Message</button>
+          <p class="form-note">
+            Please configure your Formspree form before sending messages.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Firaol. All rights reserved.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
