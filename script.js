@@ -7,6 +7,7 @@ const yearElement = document.getElementById("year");
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("open");
+
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute(
       "aria-label",
@@ -30,45 +31,45 @@ if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-// Formspree contact form
-const contactForm = document.querySelector("#contact-form");
+// Contact form
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
 
-if (contactForm) {
+if (contactForm && formStatus) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const submitButton = contactForm.querySelector(
-      'button[type="submit"], input[type="submit"]'
+      'button[type="submit"]'
     );
-    const originalText = submitButton
-      ? submitButton.textContent
-      : "";
 
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-    }
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+    formStatus.textContent = "Ergaan kee ergaa jira...";
 
     try {
-      const response = await fetch("https://formspree.io/f/xgaawrna", {
+      const response = await fetch(contactForm.action, {
         method: "POST",
         body: new FormData(contactForm),
-        headers: { Accept: "application/json" }
+        headers: {
+          Accept: "application/json"
+        }
       });
 
       if (response.ok) {
-        alert("Thank you! Your message was sent successfully.");
+        formStatus.textContent =
+          "Galatoomi! Ergaan kee milkaa'inaan ergameera.";
         contactForm.reset();
       } else {
-        alert("Message could not be sent. Please check your form fields and try again.");
+        formStatus.textContent =
+          "Ergaan hin ergamne. Formspree keessatti formii kee mirkaneessi.";
       }
     } catch (error) {
-      alert("Connection error. Please try again.");
+      formStatus.textContent =
+        "Rakkoon walqunnamtii uumame. Maaloo irra deebi'i.";
     } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalText || "Send Message";
-      }
+      submitButton.disabled = false;
+      submitButton.textContent = "Send Message";
     }
   });
 }
